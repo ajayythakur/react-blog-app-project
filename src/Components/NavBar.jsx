@@ -6,7 +6,6 @@ import Hollywood from '../Pages/Hollywood'
 import Food from '../Pages/Food'
 import Fitness from '../Pages/Fitness'
 import Home from '../Pages/Home'
-import Details from './Details'
 import DetailPage from '../Pages/DetailPage'
 import SingleBlogPage from '../Pages/SingleBlogPage'
 

@@ -1,6 +1,5 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import { NavLink } from 'react-router-dom';
-import Hill from '../Images/Hill.jpg'
 import { Link } from 'react-router-dom';
 
 const HomeVerticalTiles = (props) => {

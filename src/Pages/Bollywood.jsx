@@ -2,8 +2,6 @@ import React, { useContext } from 'react'
 // import { Link } from 'react-router-dom'
 import PageStruct from '../Components/PageStruct'
 import { store } from '../Components/Details'
-import Card from '../Components/Card';
-import SmallCard from '../Components/SmallCard';
 import SideBar from '../Components/SideBar';
 import Advertisement from '../Components/Advertisement';
 // import SideBar from '../Components/SideBar';
