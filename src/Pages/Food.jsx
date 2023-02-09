@@ -6,36 +6,36 @@ import { store } from '../Components/Details';
 import Advertisement from '../Components/Advertisement';
 
 const Food = () => {
-const [detail]=useContext(store);
+  const [detail] = useContext(store);
   console.log(detail);
   return (
     <div className='main-container'>
 
-{detail.filter((article) => { return article.category === "Food" }).map((n) => (
-<div className='leftBar'>
-<PageStruct
-imgUrl={n.img}
-title={n.title}
-description={n.description.slice(0,1000)}
+      {detail.filter((article) => { return article.category === "Food" }).map((n) => (
+        <div className='leftBar'>
+          <PageStruct
+            imgUrl={n.img}
+            title={n.title}
+            description={n.description.slice(0, 1000)}
 
-/>
-</div>
+          />
+        </div>
 
-))
+      ))
 
-}
+      }
 
-{detail.filter((article) => { return article.category === "Food" }).map((n) => (
-    <div className='rightBar'>
-<SideBar
-imgUrl={n.img}
-title={n.title}
-description={n.description.slice(0,1000)}
-/>
-</div>
-))
-}
-      
+      {detail.filter((article) => { return article.category === "Food" }).map((n) => (
+        <div className='rightBar'>
+          <SideBar
+            imgUrl={n.img}
+            title={n.title}
+            description={n.description.slice(0, 1000)}
+          />
+        </div>
+      ))
+      }
+
       {/* <PageStruct 
        img="https://joybauer.com/wp-content/uploads/2016/02/thumb_2041_content_big_wide.jpg"
        title="Tea and Coffee"
@@ -50,7 +50,7 @@ description={n.description.slice(0,1000)}
        title3="Reduce Weight"
 about3="Eggs, chicken, and turkey are rich in high-quality, lean protein and a variety of nutrients. Just remember to remove the skin and reduce the number of egg yolks to keep your heart and waistline in good shape!"
       /> */}
-      <Advertisement/>
+      <Advertisement />
     </div>
   )
 }

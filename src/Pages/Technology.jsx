@@ -7,35 +7,35 @@ import Advertisement from '../Components/Advertisement';
 
 
 const Technology = () => {
-const [detail]=useContext(store);
+  const [detail] = useContext(store);
   console.log(detail);
   return (
     <div className='main-container'>
-<Advertisement/>
-{detail.filter((article) => { return article.category === "Technology" }).map((n) => (
-<div className='leftBar'>
-<PageStruct
-imgUrl={n.img}
-title={n.title}
-description={n.description.slice(0,300)}
+      <Advertisement />
+      {detail.filter((article) => { return article.category === "Technology" }).map((n) => (
+        <div className='leftBar'>
+          <PageStruct
+            imgUrl={n.img}
+            title={n.title}
+            description={n.description.slice(0, 300)}
 
-/>
-</div>
+          />
+        </div>
 
-))
+      ))
 
-}
+      }
 
-{detail.filter((article) => { return article.category === "Technology" }).map((n) => (
-    <div className='rightBar'>
-<SideBar
-imgUrl={n.img}
-title={n.title}
-description={n.description.slice(0,50)}
-/>
-</div>
-))
-}
+      {detail.filter((article) => { return article.category === "Technology" }).map((n) => (
+        <div className='rightBar'>
+          <SideBar
+            imgUrl={n.img}
+            title={n.title}
+            description={n.description.slice(0, 50)}
+          />
+        </div>
+      ))
+      }
       {/* <PageStruct 
             img="https://images.indianexpress.com/2023/01/google-musiclm.jpg"
             title="Google"

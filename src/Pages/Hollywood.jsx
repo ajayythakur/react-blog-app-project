@@ -6,35 +6,35 @@ import { store } from '../Components/Details';
 import Advertisement from '../Components/Advertisement';
 
 const Hollywood = () => {
-const [detail]=useContext(store);
+  const [detail] = useContext(store);
   console.log(detail);
   return (
     <div className='main-container'>
-<Advertisement/>
-{detail.filter((article) => { return article.category === "Hollywood" }).map((n) => (
-<div className='leftBar'>
-<PageStruct
-imgUrl={n.img}
-title={n.title}
-description={n.description.slice(0,300)}
+      <Advertisement />
+      {detail.filter((article) => { return article.category === "Hollywood" }).map((n) => (
+        <div className='leftBar'>
+          <PageStruct
+            imgUrl={n.img}
+            title={n.title}
+            description={n.description.slice(0, 300)}
 
-/>
-</div>
+          />
+        </div>
 
-))
+      ))
 
-}
+      }
 
-{detail.filter((article) => { return article.category === "Hollywood" }).map((n) => (
-    <div className='rightBar'>
-<SideBar
-imgUrl={n.img}
-title={n.title}
-description={n.description.slice(0,50)}
-/>
-</div>
-))
-}
+      {detail.filter((article) => { return article.category === "Hollywood" }).map((n) => (
+        <div className='rightBar'>
+          <SideBar
+            imgUrl={n.img}
+            title={n.title}
+            description={n.description.slice(0, 1000)}
+          />
+        </div>
+      ))
+      }
       {/* <PageStruct 
           img="https://www.pinkvilla.com/english/images/2023/01/582836848_where-to-watch-everything-everywhere-all-at-once-the-film-that-topped-oscar-nominations-with-11-nods_1280*720.jpg"
           title="Everything Everywhere All At Once"

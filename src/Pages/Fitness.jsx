@@ -7,44 +7,36 @@ import Advertisement from '../Components/Advertisement';
 
 
 const Fitness = () => {
-  const [detail]=useContext(store);
+  const [detail] = useContext(store);
   console.log(detail);
   return (
     <div className='main-container'>
 
-{detail.filter((article) => { return article.category === "Fitness" }).map((n) => (
-<div className='leftBar'>
-<PageStruct
-imgUrl={n.img}
-title={n.title}
-description={n.description.slice(0,300)}
+      {detail.filter((article) => { return article.category === "Fitness" }).map((n) => (
+        <div className='leftBar'>
+          <PageStruct
+            imgUrl={n.img}
+            title={n.title}
+            description={n.description.slice(0, 300)}
 
-/>
-</div>
+          />
+        </div>
 
-))
+      ))
 
-}
+      }
 
-{detail.filter((article) => { return article.category === "Fitness" }).map((n) => (
-    <div className='rightBar'>
-<SideBar
-imgUrl={n.img}
-title={n.title}
-description={n.description.slice(0,50)}
-/>
-</div>
-))
-}
-
-
-
-
-
-
-
-
-
+      {detail.filter((article) => { return article.category === "Fitness" }).map((n) => (
+        <div className='rightBar'>
+          <SideBar
+            imgUrl={n.img}
+            title={n.title}
+            description={n.description.slice(0, 50)}
+          />
+        </div>
+      ))
+      }
+      
       {/* <PageStruct
       img="https://barbend.com/wp-content/uploads/2021/04/BarBend-Article-Image-760-x-427-93.jpg"
       title="Deadlift"
@@ -60,7 +52,7 @@ title3="Exercise for Back Strength"
 about3="The Best At-Home Exercises for a Stronger Back.You may not think about your back muscles very often — out of sight, out of mind, right? But you probably want to be paying them a little more attention."
       
       /> */}
-      <Advertisement/>
+      <Advertisement />
     </div>
   )
 }

@@ -7,23 +7,23 @@ const HomeVerticalTiles = (props) => {
 
   return (
     <Link to='/DetailPage'>
-    <NavLink 
- state={{
- title: title,
- img: imgUrl,
- description: description,
- id: techId,
-}}
-to={`${techId}`}
->
+      <NavLink
+        state={{
+          title: title,
+          img: imgUrl,
+          description: description,
+          id: techId,
+        }}
+        to={`${techId}`}
+      >
 
-    <div className="verticalTiles">
-        <div className=''>
-          <h4>{title}</h4>
-            <img className='tileImg' src={imgUrl} alt='404'/> <br/>
-        <p> {description}</p>
-        </div>
-        {/* <div className='tile1'>
+        <div className="verticalTiles">
+          <div className=''>
+            <h4>{title}</h4>
+            <img className='tileImg' src={imgUrl} alt='404' /> <br />
+            <p> {description}</p>
+          </div>
+          {/* <div className='tile1'>
             <img className='tileImg' src={props.img2} alt='404'/> <br/>
         <p> {props.text2}</p>
         </div>
@@ -31,12 +31,12 @@ to={`${techId}`}
             <img className='tileImg' src={props.img3} alt='404'/> <br/>
         <p> {props.text3}</p>
         </div> */}
-        
-        {/* <div className='tile1'><img className='tileImg' src={props.img} alt='404'/>
+
+          {/* <div className='tile1'><img className='tileImg' src={props.img} alt='404'/>
          </div>
         <div className='tile1'>3</div> */}
-    </div>
-    </NavLink>
+        </div>
+      </NavLink>
     </Link>
   )
 }

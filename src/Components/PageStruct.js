@@ -4,33 +4,33 @@ import { Link, NavLink } from 'react-router-dom'
 
 const PageStruct = (props) => {
     const { imgUrl, title, description, techId } = props;
-  return (
-    <Link to='/DetailPage'>
-    <NavLink 
-    state={{
-    title: title,
-    img: imgUrl,
-    description: description,
-    id: techId,
-}}
-to={`${techId}`}
->
-
-  
-    <div>
-        <div className='pageContainer'>
-            <div className='pc1'>
-                <img className='pcImage' src={imgUrl} alt="" />
-                <p className='txxt'>{title}<br/>
-                <span>{props.imdb}</span>
-                <p>{description}</p></p>
-            </div>
-            
+    return (
+        <Link to='/DetailPage'>
+            <NavLink
+                state={{
+                    title: title,
+                    img: imgUrl,
+                    description: description,
+                    id: techId,
+                }}
+                to={`${techId}`}
+            >
 
 
-            </div>
-            <hr className="pcHR"/>
-            {/* </div>
+                <div>
+                    <div className='pageContainer'>
+                        <div className='pc1'>
+                            <img className='pcImage' src={imgUrl} alt="" />
+                            <p className='txxt'>{title}<br />
+                                <span>{props.imdb}</span>
+                                <p>{description}</p></p>
+                        </div>
+
+
+
+                    </div>
+                    <hr className="pcHR" />
+                    {/* </div>
         <div className='pageContainer'>
             <div className='pc1'>
             <img className='pcImage' src={props.img2} alt="404" />
@@ -63,7 +63,7 @@ to={`${techId}`}
 
 
 
-            {/* <div className='pcRC1'>
+                    {/* <div className='pcRC1'>
                 <img className='pRCimg' src={props.img2}/>
                 <p className='pRCtext'>{props.title2}<br/>
                 <span>{props.imdb2}</span>
@@ -86,17 +86,17 @@ to={`${techId}`}
                 <p className='pRCtext'>{props.title4}<br/>
                 <span>{props.imdb4}</span>
                 <p>{props.date4}</p></p> */}
-                
-             
-            {/* <div className='pcRC1'>3</div>
+
+
+                    {/* <div className='pcRC1'>3</div>
             <div className='pcRC1'>4</div>
             <div className='pcRC1'>5</div> */}
-        
-      
-    </div>
-    </NavLink>
-    </Link>
-  )
+
+
+                </div>
+            </NavLink>
+        </Link>
+    )
 }
 
 export default PageStruct
