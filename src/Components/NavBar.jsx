@@ -78,6 +78,4 @@ const NavBar = () => {
         </div>
     )
 }
-{/* <Route path=':category/articleid' element={<SingleBlogPage />} /> */}
-
 export default NavBar
