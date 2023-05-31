@@ -1,57 +1,49 @@
 import React from 'react'
-import PageStruct from '../Components/PageStruct'
-import SideBar from '../Components/SideBar';
 import { useContext } from 'react';
 import { store } from '../Components/Details';
-import Advertisement from '../Components/Advertisement';
+import { Link } from 'react-router-dom';
+
 
 const Food = () => {
   const [detail] = useContext(store);
   console.log(detail);
   return (
-    <div className='main-container'>
-
-      {detail.filter((article) => { return article.category === "Food" }).map((n) => (
-        <div className='leftBar'>
-          <PageStruct
-            imgUrl={n.img}
-            title={n.title}
-            description={n.description.slice(0, 1000)}
-
-          />
-        </div>
-
-      ))
-
-      }
-
-      {detail.filter((article) => { return article.category === "Food" }).map((n) => (
-        <div className='rightBar'>
-          <SideBar
-            imgUrl={n.img}
-            title={n.title}
-            description={n.description.slice(0, 1000)}
-          />
-        </div>
-      ))
-      }
-
-      {/* <PageStruct 
-       img="https://joybauer.com/wp-content/uploads/2016/02/thumb_2041_content_big_wide.jpg"
-       title="Tea and Coffee"
-       about="Tea and coffee may wake you up and keep you focused, but don’t overdo it on the caffeine — it may trigger migraines or IBS in people who are sensitive."
-
-
-       img2="https://joybauer.com/wp-content/uploads/2016/02/thumb_2023_content_big_wide.jpg"
-       title2="Cruciferous Vegetables"
-       about2="Cruciferous vegetables like broccoli and brussels sprouts are filling and full of nutrients that help keep you healthy! But if you have IBS, you may want to watch how much of them you eat!"  
-
-       img3="https://joybauer.com/wp-content/uploads/2016/02/thumb_2035_content_big_wide.jpg"
-       title3="Reduce Weight"
-about3="Eggs, chicken, and turkey are rich in high-quality, lean protein and a variety of nutrients. Just remember to remove the skin and reduce the number of egg yolks to keep your heart and waistline in good shape!"
-      /> */}
-      <Advertisement />
-    </div>
+    <div className='main-page'>
+    <div className='first-child'>
+                {detail.filter((article) => { return article.category === "Food" }).map((n) => (
+                // <div className='side-inline'>
+                <Link to='/DetailPage' state={n}>
+                    <div className='content'>
+                        <div><img src={n.img} alt='404'></img></div>
+                        <div className='cont'>
+                        <p className='data_title res-title'>{n.title} </p>
+                        <p className='data_description'>{n.description} </p>
+                        </div>
+                    </div>
+                  </Link>
+    ))
+                }
+                </div>
+                {/* <div className='side-inline'> */}
+                <div className='adv_top'>                
+                    <div className='add'>Advertisement</div>
+                    <div className='topPos' >Top Posts</div>
+                    {detail.filter((article) => { return article.category === "Food" }).map((n) => (
+                    <Link to='/DetailPage' state={n}>
+                    <div className='post'>
+                        <div><img src={n.img} alt='404'/></div>
+                        <div className='cont'>
+                        <p className='data_title postTitle'>{n.title} </p>
+                        <p className='data_description'>{n.description} </p>
+                        </div>
+                    </div>
+                    </Link>
+                    
+                ))
+                }
+                </div>
+                {/* </div> */}
+            </div>
   )
 }
 
